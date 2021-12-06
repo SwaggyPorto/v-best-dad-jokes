@@ -1,5 +1,5 @@
 export default {
-  ssr: false, // Disable server side rendering
+  ssr: true, // Enable server side rendering
   /*
    ** Headers of the page
    */

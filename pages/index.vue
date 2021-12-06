@@ -21,6 +21,9 @@ import Logo from "~/components/Logo.vue";
 import { mapActions, mapState } from 'vuex'
 
 export default {
+  async asyncData ({ store }) {
+    await store.dispatch('posts/getPosts')
+  },
   components: {
     Logo
   },
@@ -34,14 +37,6 @@ export default {
         { name: "twitter:card", content: "summary_large_image" }
       ]
     };
-  },
-  created () {
-    this.getPosts()
-  },
-  methods: {
-    ...mapActions('posts', [
-      'getPosts'
-    ])
   },
   computed: {
     ...mapState('posts', ['posts'])
