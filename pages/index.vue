@@ -5,12 +5,12 @@
       <h1 class="title">Best DAD jokes</h1>
       <h2 class="subtitle">That Are So Bad And So Funny!</h2>
       <div class="links">
-        <nuxt-link
+        <NuxtLink
           :key="post.id"
           v-for="post in posts"
-          :to="{name: 'posts-id', params: {id: post.id}}"
+          :to="'/posts/' + post.slug"
           class="button--grey"
-        >{{post.title}}</nuxt-link>
+        >{{post.title}}</NuxtLink>
       </div>
     </div>
   </div>
@@ -18,7 +18,7 @@
 
 <script>
 import Logo from "~/components/Logo.vue";
-import { mapActions, mapState } from 'vuex'
+import { mapState } from 'vuex'
 
 export default {
   async asyncData ({ store }) {

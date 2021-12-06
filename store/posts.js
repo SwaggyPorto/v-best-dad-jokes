@@ -17,5 +17,6 @@ export const mutations = {
 
 export const state = () => ({
   id: 1,
-  posts: []
+  posts: [],
+  post: []
 });
